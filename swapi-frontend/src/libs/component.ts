@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 type MapModifiersModifier = string | false | null | undefined | (string | false | null | undefined)[];
 
 function generateModifierClassNameArray(baseClassName: string, ...modifiers: MapModifiersModifier[]): string[] {
@@ -35,3 +38,14 @@ export function mapModifiers(baseClassName: string, ...modifiers: MapModifiersMo
     ).trim();
   
   }
+
+export const ScrollToTop: React.FC = () => {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  };
+  

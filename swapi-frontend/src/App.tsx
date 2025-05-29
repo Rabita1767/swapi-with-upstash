@@ -4,11 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from "./pages/Home/home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SingleProductView from "./pages/SingleProductView/singleProductView";
+import { ScrollToTop } from "./libs/component";
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/character/:id" element={<SingleProductView/>} />
